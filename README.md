@@ -1,1 +1,1 @@
-# Generador-de-contrase-as
+# Generador-de-contraseñas
