@@ -1,5 +1,5 @@
 #  🔐 Generador Seguro de Contraseñas
-> Este proyecto consiste en un generador de contraseñas personalizable, creado en Python, que permite al usuario establecer criterios como la longitud y tipos de caracteres (mayúsculas, minúsculas, números, símbolos). El objetivo es generar claves robustas mediante un proceso seguro y confiable, utilizando la biblioteca secrets para garantizar aleatoriedad criptográfica.
+Este proyecto consiste en un generador de contraseñas personalizable, creado en Python, que permite al usuario establecer criterios como la longitud y tipos de caracteres (mayúsculas, minúsculas, números, símbolos). El objetivo es generar claves robustas mediante un proceso seguro y confiable, utilizando la biblioteca secrets para garantizar aleatoriedad criptográfica.
 
 ### 🎯 Objetivo del programa
 > *El objetivo principal de este proyecto es generar contraseñas seguras, aleatorias y personalizadas, permitiendo al usuario definir parámetros como la longitud y los tipos de caracteres (mayúsculas, minúsculas, dígitos y símbolos). Está diseñado para ejecutarse desde consola y garantizar un alto nivel de seguridad mediante el uso de la librería secrets.*
