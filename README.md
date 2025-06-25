@@ -52,13 +52,13 @@ Entrada personalizada por consola.
 
 >📌 Referencia visual disponible en el archivo “Diagrama_de_arquitectura.pdf”
 
-##🧩 Diagrama de caso de uso🧩 Diagrama de caso de uso
+## 🧩 Diagrama de caso de uso🧩 Diagrama de caso de uso
 Este diagrama representa las acciones que puede realizar el usuario con el sistema:
 Actores:
 
 - Usuario
 
-#####Casos de uso:
+##### Casos de uso:
 
 - Ingresar opciones (mayúsculas, minúsculas, números, símbolos)
 
@@ -83,7 +83,7 @@ def generar_contrasena(longitud, usar_mayus, usar_minus, usar_digitos, usar_simb
 ```
 - Construye un conjunto de caracteres con base en las preferencias del usuario.
 
-- Utiliza secrets.choice() para mayor seguridad.
+- Utiliza** secrets.choice()** para mayor seguridad.
 
 - Devuelve la contraseña final.
 ##### Entrada por consola
@@ -92,13 +92,13 @@ input("Incluir mayúsculas? (s/n): ")
 ```
 - Se muestra la contraseña generada según las reglas establecidas.
 
-> 💡 El uso de secrets en lugar de random se justifica porque está diseñado para operaciones criptográficamente seguras
+> 💡 El uso de **secrets** en lugar de** random** se justifica porque está diseñado para operaciones criptográficamente seguras
 ..
 
 ### 🛠 Requisitos
 - Python 3.6 o superior
 
-- No requiere paquetes externos (solo string y secrets)
+- No requiere paquetes externos (solo **string **y **secrets**)
 
 ### 🚀 Ejecución
 ```bash
