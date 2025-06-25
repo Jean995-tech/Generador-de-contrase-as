@@ -1,40 +1,51 @@
-import string   # Para acceder a letras, dígitos y símbolos
-import random   # Para generar selecciones aleatorias
-import secrets  # Para generar selecciones más seguras (ideal para contraseñas)
+import string  # Constantes de letras, dígitos y símbolos
+import secrets  # Selecciones aleatorias seguras
 
-def generar_contrasena(longitud=12, usar_mayus=True, usar_minus=True, usar_digitos=True, usar_simbolos=True):
+
+def generar_contrasena(
+    longitud=12, usar_mayus=True, usar_minus=True, usar_digitos=True, usar_simbolos=True
+):
     """
     Genera una contraseña aleatoria según las opciones dadas:
-    - longitud: cantidad de caracteres
-    - usar_mayus: incluir mayúsculas A-Z
-    - usar_minus: incluir minúsculas a-z
-    - usar_digitos: incluir números 0-9
-    - usar_simbolos: incluir símbolos como !@#
+      - longitud: número de caracteres
+      - usar_mayus: incluir A-Z
+      - usar_minus: incluir a-z
+      - usar_digitos: incluir 0-9
+      - usar_simbolos: incluir puntuación
     """
-    caracteres = ""
-    if usar_minus:
-        caracteres += string.ascii_lowercase  # abcdef...
-    if usar_mayus:
-        caracteres += string.ascii_uppercase  # ABCDEF...
-    if usar_digitos:
-        caracteres += string.digits           # 0123456789
-    if usar_simbolos:
-        caracteres += string.punctuation      # !"#$%...
+    # Construimos el conjunto de caracteres usando comprensión
+    caracteres = (
+        (string.ascii_lowercase if usar_minus else "")
+        + (string.ascii_uppercase if usar_mayus else "")
+        + (string.digits if usar_digitos else "")
+        + (string.punctuation if usar_simbolos else "")
+    )
 
     if not caracteres:
-        return ""
+        # Si no hay caracteres, no podemos generar nada
+        raise ValueError("Debes activar al menos un tipo de carácter.")
 
-    contrasena = ''.join(secrets.choice(caracteres) for _ in range(longitud))
-    return contrasena
+    # secrets.choice() para seguridad criptográfica
+    return "".join(secrets.choice(caracteres) for _ in range(longitud))
 
-# Parte principal del programa
+
 if __name__ == "__main__":
-    print("=== Generador de Contraseñas ===")
-    longitud = int(input("Longitud de la contraseña: "))
-    mayus = input("¿Incluir mayúsculas? (s/n): ").strip().lower() == 's'
-    minus = input("¿Incluir minúsculas? (s/n): ").strip().lower() == 's'
-    digitos = input("¿Incluir números? (s/n): ").strip().lower() == 's'
-    simbolos = input("¿Incluir símbolos? (s/n): ").strip().lower() == 's'
+    try:
+        longitud = int(input("Ingresa la longitud de la contraseña: ").strip())
+    except ValueError:
+        print("Error: longitud debe ser un número entero.")
+        exit(1)
 
-    pwd = generar_contrasena(longitud, mayus, minus, digitos, simbolos)
-    print("Tu contraseña generada es:", pwd)
+    # Convertimos s/n a booleano
+    pregunta = lambda msg: input(msg).strip().lower().startswith("s")
+    mayus = pregunta("Incluir mayúsculas? (s/n): ")
+    minus = pregunta("Incluir minúsculas? (s/n): ")
+    digitos = pregunta("Incluir dígitos?     (s/n): ")
+    simbolos = pregunta("Incluir símbolos?    (s/n): ")
+
+    try:
+        pwd = generar_contrasena(longitud, mayus, minus, digitos, simbolos)
+    except ValueError as e:
+        print("Error:", e)
+    else:
+        print("Contraseña generada:", pwd)
