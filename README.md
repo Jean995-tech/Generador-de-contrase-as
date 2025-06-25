@@ -92,13 +92,13 @@ input("Incluir mayúsculas? (s/n): ")
 ```
 - Se muestra la contraseña generada según las reglas establecidas.
 
-> 💡 El uso de **secrets** en lugar de** random** se justifica porque está diseñado para operaciones criptográficamente seguras
+> 💡 El uso de **secrets** en lugar de **random **se justifica porque está diseñado para operaciones criptográficamente seguras
 ..
 
 ### 🛠 Requisitos
 - Python 3.6 o superior
 
-- No requiere paquetes externos (solo **string **y **secrets**)
+- No requiere paquetes externos (solo** string **y **secrets**)
 
 ### 🚀 Ejecución
 ```bash
