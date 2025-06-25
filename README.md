@@ -21,16 +21,16 @@ Entrada personalizada por consola.
 - Módulo de salida que muestra la contraseña generada.
 
 
-####⚙️ Arquitectura del sistema
+###⚙️ Arquitectura del sistema
 > El proyecto está estructurado en tres capas principales según el diagrama de arquitectura:El proyecto está estructurado en tres capas principales según el diagrama de arquitectura:
 
-####📄 Formulario de personalización
+###📄 Formulario de personalización
 
 - Interfaz que recibe parámetros del usuario desde consola.
 
 - Permite definir la longitud y los tipos de caracteres deseados.
 
-#### Lógica de aplicación🧠 Lógica de aplicación
+### Lógica de aplicación🧠 Lógica de aplicación
 
 - Valida las entradas del usuario.
 
@@ -38,13 +38,13 @@ Entrada personalizada por consola.
 
 - Controla el flujo entre entrada y salida.
 
-####🧰 Motor generador de contraseñas
+###🧰 Motor generador de contraseñas
 
 - Usa secrets.choice() para seleccionar caracteres de forma segura.
 
 - Aplica los criterios indicados para construir la contraseña final.
 
-####🧾 Módulo de salida
+###🧾 Módulo de salida
 
 - Muestra la contraseña generada.
 
